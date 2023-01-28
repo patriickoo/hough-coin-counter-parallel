@@ -1,0 +1,5 @@
+/Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter/cmake-build-debug/CMakeFiles/hough_coin_counter_parallel.dir
+/Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter/cmake-build-debug/CMakeFiles/edge_detection.dir
+/Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter/cmake-build-debug/CMakeFiles/draw_circles.dir
+/Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.9"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "hough_coin_counter_parallel",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "draw_circles::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-draw_circles-Debug-9a567d675ec58e4d070b.json",
+					"name" : "draw_circles",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "edge_detection::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-edge_detection-Debug-bb4c63179c5a2683e806.json",
+					"name" : "edge_detection",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hough_coin_counter_parallel::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hough_coin_counter_parallel-Debug-4ef38c45293e247b1c0d.json",
+					"name" : "hough_coin_counter_parallel",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter/cmake-build-debug",
+		"source" : "/Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

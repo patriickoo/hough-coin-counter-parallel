@@ -1,0 +1,4 @@
+Cannot generate into /Users/margheritamilani/Desktop/uni/ACA/hough_coin_counter_parallel/coin-counter
+It was created with incompatible generator 'Unix Makefiles'
+
+Please either delete it manually or select another generation directory

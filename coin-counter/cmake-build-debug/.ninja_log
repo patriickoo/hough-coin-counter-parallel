@@ -1,0 +1,11 @@
+# ninja log v5
+0	185	1673916134964682676	CMakeFiles/coin-counter.dir/hcc_function.c.o	f96c29a63a595ab6
+1	1889	1673916811618984838	CMakeFiles/hough_coin_counter.dir/edge_detection.cpp.o	a74d48b1eaab1b25
+3	104	1673916819429004664	CMakeFiles/hough_coin_counter.dir/main.c.o	5c9b7d61c2552d16
+0	182	1673958820288930834	CMakeFiles/hough_coin_counter_parallel.dir/main.c.o	e8fa6504daf81510
+1	200	1673916493990499828	CMakeFiles/hough_coin_counter.dir/hcc_function.c.o	d46fe9591bdbaaf7
+0	183	1673958820289821858	CMakeFiles/hough_coin_counter_parallel.dir/hcc_function.c.o	16184cf34f78737e
+0	1941	1673958822040171572	CMakeFiles/hough_coin_counter_parallel.dir/edge_detection.cpp.o	1d4505949f708412
+1	100	1673959152188870790	CMakeFiles/hough_coin_counter_parallel.dir/main.c.o	aee9bf524a1a3273
+2	110	1673959152200055493	CMakeFiles/hough_coin_counter_parallel.dir/hcc_function.c.o	436fda816418c3ae
+110	165	1673959152255664809	hough_coin_counter_parallel	f0c4176ca8dd392a

@@ -1,0 +1,5 @@
+/Users/pat/git/hough_coin_counter_parallel/coin-counter/CMakeFiles/hough_coin_counter_parallel.dir
+/Users/pat/git/hough_coin_counter_parallel/coin-counter/CMakeFiles/edge_detection.dir
+/Users/pat/git/hough_coin_counter_parallel/coin-counter/CMakeFiles/draw_circles.dir
+/Users/pat/git/hough_coin_counter_parallel/coin-counter/CMakeFiles/edit_cache.dir
+/Users/pat/git/hough_coin_counter_parallel/coin-counter/CMakeFiles/rebuild_cache.dir
