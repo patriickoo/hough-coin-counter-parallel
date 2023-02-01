@@ -37,10 +37,8 @@ int main() {
                accumulator.faces, sizeof(accumulator.data));
     }
 
-    printf("Broadcasting... %d\n", myrank);
     MPI_Bcast(&mat.rows, 1, MPI_INT, 0, MPI_COMM_WORLD);
     MPI_Bcast(&mat.cols, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    printf(" received myrank %d size %d %d\n", myrank, mat.rows, mat.cols);
 
     if (myrank != 0) {
         mat.data = (int *) malloc(sizeof(int) * mat.rows * mat.cols);
@@ -50,15 +48,10 @@ int main() {
     }
 
     MPI_Bcast(mat.data, mat.rows * mat.cols, MPI_INT, 0, MPI_COMM_WORLD);
-    printf("[%d] Received.\n", myrank);
 
     MPI_Barrier(MPI_COMM_WORLD);
 
-    printf("[%d] Barrier surpassed!\n", myrank);
-
     increment_accumulator(&mat, &accumulator, size, myrank);
-
-    printf("[%d] Accumulator incremented.\n", myrank);
 
     if (myrank == 0) {
         // FIND MAXIMUM
@@ -75,13 +68,19 @@ int main() {
         // COUNT COINS
         printf("Subtotal is %f\n", count_coins(coords, size2));
 
-        free_matrix(&mat);
+        //free_matrix(&mat);
     }
 
-    clock_t end = clock();
-    double time_spent = ((double)(end - start)) / CLOCKS_PER_SEC;
+    MPI_Barrier(MPI_COMM_WORLD);
 
-    printf("TIME SPENT %lf\n", time_spent);
+    if (myrank == 0) {
+    
+        clock_t end = clock();
+        double time_spent = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+        printf("TIME SPENT %lf\n", time_spent);
+
+    }
 
     MPI_Finalize();
 

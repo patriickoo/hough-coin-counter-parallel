@@ -89,7 +89,7 @@ void increment_accumulator(struct matrix *input, struct matrix *accumulator, int
     split_matrix.rows = accumulator->rows;
     split_matrix.cols = accumulator->cols;
     split_matrix.faces = accumulator->faces / n_process;
-    int tail = input->faces % n_process;
+    int tail = accumulator->faces % n_process;
     split_matrix.data = malloc(sizeof *split_matrix.data * split_matrix.rows * split_matrix.cols * split_matrix.faces);
     int radius = (accumulator->faces / MIN_RADIUS_CONSTANT)+ myrank * split_matrix.faces;
     int voting_range = 5; // MUST BE ODD NUMBER !
@@ -277,8 +277,6 @@ float count_coins(struct centers_coords *coords, int number_of_circles) {
     //DEBUG
     int flag;
 
-    printf("\n\n\n\n\n\n\n\n\n\nNUMBER OF CIRCLES %d\n\n\n\n\n\n\n\n\n\n", number_of_circles);
-
     for (int i = number_of_circles - 1; i >= 0; i--) {
 
         flag = 0;
@@ -309,11 +307,11 @@ float count_coins(struct centers_coords *coords, int number_of_circles) {
         }
 
     }
-
+/*
     FILE *out_circles;
     out_circles = fopen("files/circle_coordinates.csv", "w");
     write_circles_on_file(out_circles, coords, number_of_circles);
-
+*/
     return total;
 
 }

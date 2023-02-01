@@ -17,7 +17,27 @@ int main(int argc, char **argv)
     Mat img = imread(input_filename);
     FileStorage file("files/matrix.txt", cv::FileStorage::WRITE);
 
-    resize(img, img, Size(img.cols * RESIZE_CONSTANT, img.rows * RESIZE_CONSTANT), 0, 0, INTER_LINEAR);
+/*
+    double minVal;
+    double maxVal;
+    Point minLoc(0,0), maxLoc(0,0);
+    minMaxLoc(img, &minVal, &maxVal);
+
+    int low_stretch = 0;
+    int up_stretch = 255;
+
+    for (int i = 0; i < img.rows; i++) {
+        for (int j = 0; j < img.cols; j++) {
+            img.data[i * img.cols + j] = (img.data[i * img.cols + j] - minVal) * ((up_stretch - low_stretch) /
+                                         (maxVal - minVal)) + low_stretch ;
+        }
+    }
+
+    imshow("circles", img);
+    waitKey();
+*/
+
+    resize(img, img, Size(img.cols * RESIZE_CONSTANT, img.rows * RESIZE_CONSTANT), 0, 0, INTER_NEAREST_EXACT);
 
     // Convert to graycsale
     Mat img_gray;
@@ -29,7 +49,7 @@ int main(int argc, char **argv)
     
     // Canny edge detection
     Mat canny;
-    Canny(img_blur, canny, 100, 200, 3, true);
+    Canny(img_blur, canny, 75, 150, 3, false);
 
     // Sobel edge detection
     // Mat sobel;
