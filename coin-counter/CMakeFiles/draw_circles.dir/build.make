@@ -73,15 +73,15 @@ CMakeFiles/draw_circles.dir/draw_circles.cpp.o: CMakeFiles/draw_circles.dir/flag
 CMakeFiles/draw_circles.dir/draw_circles.cpp.o: draw_circles.cpp
 CMakeFiles/draw_circles.dir/draw_circles.cpp.o: CMakeFiles/draw_circles.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pat/git/hough_coin_counter_parallel/coin-counter/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/draw_circles.dir/draw_circles.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/draw_circles.dir/draw_circles.cpp.o -MF CMakeFiles/draw_circles.dir/draw_circles.cpp.o.d -o CMakeFiles/draw_circles.dir/draw_circles.cpp.o -c /Users/pat/git/hough_coin_counter_parallel/coin-counter/draw_circles.cpp
+	/opt/homebrew/bin/mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/draw_circles.dir/draw_circles.cpp.o -MF CMakeFiles/draw_circles.dir/draw_circles.cpp.o.d -o CMakeFiles/draw_circles.dir/draw_circles.cpp.o -c /Users/pat/git/hough_coin_counter_parallel/coin-counter/draw_circles.cpp
 
 CMakeFiles/draw_circles.dir/draw_circles.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/draw_circles.dir/draw_circles.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pat/git/hough_coin_counter_parallel/coin-counter/draw_circles.cpp > CMakeFiles/draw_circles.dir/draw_circles.cpp.i
+	/opt/homebrew/bin/mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pat/git/hough_coin_counter_parallel/coin-counter/draw_circles.cpp > CMakeFiles/draw_circles.dir/draw_circles.cpp.i
 
 CMakeFiles/draw_circles.dir/draw_circles.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/draw_circles.dir/draw_circles.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pat/git/hough_coin_counter_parallel/coin-counter/draw_circles.cpp -o CMakeFiles/draw_circles.dir/draw_circles.cpp.s
+	/opt/homebrew/bin/mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pat/git/hough_coin_counter_parallel/coin-counter/draw_circles.cpp -o CMakeFiles/draw_circles.dir/draw_circles.cpp.s
 
 # Object files for target draw_circles
 draw_circles_OBJECTS = \

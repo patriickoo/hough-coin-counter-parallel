@@ -73,15 +73,15 @@ CMakeFiles/edge_detection.dir/edge_detection.cpp.o: CMakeFiles/edge_detection.di
 CMakeFiles/edge_detection.dir/edge_detection.cpp.o: edge_detection.cpp
 CMakeFiles/edge_detection.dir/edge_detection.cpp.o: CMakeFiles/edge_detection.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pat/git/hough_coin_counter_parallel/coin-counter/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/edge_detection.dir/edge_detection.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_detection.dir/edge_detection.cpp.o -MF CMakeFiles/edge_detection.dir/edge_detection.cpp.o.d -o CMakeFiles/edge_detection.dir/edge_detection.cpp.o -c /Users/pat/git/hough_coin_counter_parallel/coin-counter/edge_detection.cpp
+	/opt/homebrew/bin/mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/edge_detection.dir/edge_detection.cpp.o -MF CMakeFiles/edge_detection.dir/edge_detection.cpp.o.d -o CMakeFiles/edge_detection.dir/edge_detection.cpp.o -c /Users/pat/git/hough_coin_counter_parallel/coin-counter/edge_detection.cpp
 
 CMakeFiles/edge_detection.dir/edge_detection.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/edge_detection.dir/edge_detection.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pat/git/hough_coin_counter_parallel/coin-counter/edge_detection.cpp > CMakeFiles/edge_detection.dir/edge_detection.cpp.i
+	/opt/homebrew/bin/mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pat/git/hough_coin_counter_parallel/coin-counter/edge_detection.cpp > CMakeFiles/edge_detection.dir/edge_detection.cpp.i
 
 CMakeFiles/edge_detection.dir/edge_detection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/edge_detection.dir/edge_detection.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pat/git/hough_coin_counter_parallel/coin-counter/edge_detection.cpp -o CMakeFiles/edge_detection.dir/edge_detection.cpp.s
+	/opt/homebrew/bin/mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pat/git/hough_coin_counter_parallel/coin-counter/edge_detection.cpp -o CMakeFiles/edge_detection.dir/edge_detection.cpp.s
 
 # Object files for target edge_detection
 edge_detection_OBJECTS = \
