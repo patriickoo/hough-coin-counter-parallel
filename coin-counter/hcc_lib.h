@@ -5,12 +5,13 @@
 #include <mpi.h>
 #include <time.h>
 
-#define RESIZE_CONSTANT 0.8F
+#define RESIZE_CONSTANT 0.41F
 #define DISTANCE_CONSTANT 6.4375F / RESIZE_CONSTANT
 #define RADIUS_TOLERANCE 20
 #define MIN_RADIUS_CONSTANT 8
 #define THRESHOLD_PERCENTAGE 80
 
+// each of these is the radius of the coin in millimetres
 #define CENT_1 1625 / 2
 #define CENT_2 1875 / 2
 #define CENT_5 2125 / 2
@@ -37,7 +38,7 @@ void init();
 
 void read_image(FILE *f, struct matrix *output);
 
-void skip_line(FILE *f);
+static inline void skip_line(FILE *f);
 
 void print_matrix(struct matrix *mat);
 

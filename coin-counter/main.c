@@ -1,7 +1,7 @@
 #include "hcc_lib.h"
 
 int main() {
-    clock_t start = clock();
+    clock_t start = clock();  // start counting time
 
     MPI_Status status;
     int myrank, size;
@@ -12,21 +12,20 @@ int main() {
 
     struct matrix mat;
     struct matrix accumulator;
-    init();
+    init();  // initialise precomputed sine and cosine arrays
 
-    if (myrank == 0) {
-        // READ IMAGE
+    if (myrank == 0) {  // master process initialising
         FILE *f;
         f = fopen("files/matrix.txt", "r");
         if (f != NULL) {
             printf("File found: ");
         }
 
-        read_image(f, &mat);
+        read_image(f, &mat);  // read image and convert it into a struct matrix
         fclose(f);
         printf("%dx%d\nIncrementing accumulator...\n", mat.cols, mat.rows);
 
-        // START HOUGH TANSFORM
+        /* HOUGH TANSFORM */
         accumulator.rows = mat.rows;
         accumulator.cols = mat.cols;
         accumulator.faces = sqrt(pow(mat.rows, 2) + pow(mat.cols, 2)) / 6;
@@ -37,21 +36,21 @@ int main() {
                accumulator.faces, sizeof(accumulator.data));
     }
 
-    MPI_Bcast(&mat.rows, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Bcast(&mat.rows, 1, MPI_INT, 0, MPI_COMM_WORLD);  // broadcast rows and cols
     MPI_Bcast(&mat.cols, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-    if (myrank != 0) {
+    if (myrank != 0) {  // all processes except master allocate space for edge detected mat and accumulator
         mat.data = (int *) malloc(sizeof(int) * mat.rows * mat.cols);
         accumulator.rows = mat.rows;
         accumulator.cols = mat.cols;
         accumulator.faces = sqrt(pow(mat.rows, 2) + pow(mat.cols, 2)) / 6;
     }
 
-    MPI_Bcast(mat.data, mat.rows * mat.cols, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Bcast(mat.data, mat.rows * mat.cols, MPI_INT, 0, MPI_COMM_WORLD);  // broadcast edge detected matrix
 
     MPI_Barrier(MPI_COMM_WORLD);
 
-    increment_accumulator(&mat, &accumulator, size, myrank);
+    increment_accumulator(&mat, &accumulator, size, myrank);  // start parallel accumulator incrementing
 
     if (myrank == 0) {
         // FIND MAXIMUM
@@ -67,8 +66,6 @@ int main() {
 
         // COUNT COINS
         printf("Subtotal is %f\n", count_coins(coords, size2));
-
-        //free_matrix(&mat);
     }
 
     MPI_Barrier(MPI_COMM_WORLD);

@@ -11,55 +11,26 @@ int main(int argc, char **argv)
     char *output_filename = "files/edgedetected.jpg";
 
     if (argc > 1) {
-        input_filename = argv[1];
+        input_filename = argv[1];  // uses the first given argument as file path for execution
     }
 
     Mat img = imread(input_filename);
     FileStorage file("files/matrix.txt", cv::FileStorage::WRITE);
 
-/*
-    double minVal;
-    double maxVal;
-    Point minLoc(0,0), maxLoc(0,0);
-    minMaxLoc(img, &minVal, &maxVal);
-
-    int low_stretch = 0;
-    int up_stretch = 255;
-
-    for (int i = 0; i < img.rows; i++) {
-        for (int j = 0; j < img.cols; j++) {
-            img.data[i * img.cols + j] = (img.data[i * img.cols + j] - minVal) * ((up_stretch - low_stretch) /
-                                         (maxVal - minVal)) + low_stretch ;
-        }
-    }
-
-    imshow("circles", img);
-    waitKey();
-*/
-
+    /* scale the image down by factor RESIZE_CONSTANT declared in the lib */
     resize(img, img, Size(img.cols * RESIZE_CONSTANT, img.rows * RESIZE_CONSTANT), 0, 0, INTER_NEAREST_EXACT);
 
-    // Convert to graycsale
     Mat img_gray;
-    cvtColor(img, img_gray, COLOR_BGR2GRAY);
-    // Blur the image for better edge detection
+    cvtColor(img, img_gray, COLOR_BGR2GRAY);  // converts to grayscale
     Mat img_blur;
-    GaussianBlur(img_gray, img_blur, Size(7, 7), 0);
-    //medianBlur(img_gray, img_blur ,7);
-    
-    // Canny edge detection
+    GaussianBlur(img_gray, img_blur, Size(7, 7), 0);  // blurs the image, to avoid anomalies
+
     Mat canny;
-    Canny(img_blur, canny, 75, 150, 3, false);
+    Canny(img_blur, canny, 75, 150, 3, false);  // applying Cany edge detection
 
-    // Sobel edge detection
-    // Mat sobel;
-    // Sobel(img_blur, sobel, CV_64F, 1, 1, 5);
+    file << "M" << canny;  // print edge detected matrix on txt file
 
-    file << "M" << canny;
-    // file << "M" << sobel;
-
-    imwrite(output_filename, canny);
-    // imwrite(output_filename, sobel);
+    imwrite(output_filename, canny);  // produce edge detected image
 
     return 0;
 }
